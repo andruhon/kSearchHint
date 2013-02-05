@@ -1,0 +1,35 @@
+/* live search hints */
+.hintable {
+	position: relative;
+	width: 150px;
+}
+.hintable input{
+	width: 100%;
+	margin: 0;
+	border: 1px inset #CFCDCD;
+	background: whiteSmoke;
+}
+.hintWrapper {
+	width: 100%;
+	position: absolute;
+	left: 0px; top: 100%;
+	background: white;
+	color: gray;
+	/*border: 1px solid gray;*/
+	margin: 0;
+}
+.hintContainer{
+	margin: 0; padding: 0;
+}
+.hintItem, .hintsSpinner{
+	list-style: none;
+	padding: 5px 3px !important;
+	margin: 0;
+}
+.hintsSpinner {
+	background: url(images/ajax-loader.gif) no-repeat center center;
+	height: 20px;
+}
+.hintItemHovered{
+	background: #eeeeff;
+}
