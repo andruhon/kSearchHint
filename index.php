@@ -39,7 +39,7 @@
 <body>
 <h1>kSearchHint</h1>
 <h3>Start typing name of one of New Zealand's town or city</h3>
-<small>For example Hammilton</small>
+<small>For example Hamilton</small>
 <div class="hintable">
     <input type="text" id="search"/>
 </div>
