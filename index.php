@@ -31,13 +31,15 @@
 ?><!DOCTYPE html>
 <html>
 <head>
-    <title>Page Title</title>
+    <title>kSearchHint example</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
     <script src="js/kSearchHint.js"></script>
     <link href="css/style.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-
+<h1>kSearchHint</h1>
+<h3>Start typing name of one of New Zealand's town or city</h3>
+<small>For example Hammilton</small>
 <div class="hintable">
     <input type="text" id="search"/>
 </div>
@@ -48,6 +50,8 @@
         textName: 'search'
     });
 </script>
+<p>Use keyboard up and down arrows to navigate through suggestions. Press right arrow to choose one. Of course you can use mouse click too.</p>
+
 
 </body>
 </html>

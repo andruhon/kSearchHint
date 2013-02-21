@@ -10,7 +10,7 @@
  * @author: Andrey Kondratev andr@kopolo.ru
  * 
  * Dual licensed under MIT and GPL 2+ licenses
- * http://kopolo.ru/for-developers/ksearchhint/_license/
+ * https://github.com/andruhon/kSearchHint
  */
 
 (function(jQuery){
@@ -22,141 +22,141 @@
         
         /*Default parameters*/
         var defaults = {
-                /**
+              /**
                  * Processing INPIT element
                  * var string | object
                  */
                 input: false,
                 
-                /**
+              /**
                  * Request url
                  * var string
                  */
                 url: '/search/',
                     
-                /**
+              /**
                  * Name of request variable
                  * var string
                  */
                 textName: 'name',
                 
-                /**
+              /**
                  * Name of result text value
                  * request should contain array or object with strings if null
                  * var string
                  */
                 valueName: null,
                 
-                /**
+              /**
                  * Request type post or get
                  * var string - POST|GET
                  */
                 requestType: 'POST',
                 
-                /**
+              /**
                  * CSS class for hints wrapper
                  * container will be positioned relatively to the wrapper
                  * var string
                  */
                 hintWrapperClass: 'hintWrapper',
                     
-                /**
+              /**
                  * CSS class for hints container
                  * container is the wrapper's only child
                  * var string
                  */
                 hintContainerClass: 'hintContainer',
                 
-                /**
+              /**
                  * CSS class for hint item
                  * var string
                  */
                 hintItemClass: 'hintItem',
                 
-                /**
+              /**
                  * CSS class for hovered hint item
                  * var string
                  */
                 hintItemHoverClass: 'hintItemHovered',
                 
-                /**
+              /**
                  * CSS class for hints spinner
                  * var string
                  */
                 spinnerClass: 'hintsSpinner',
                 
-                /**
+              /**
                  * Ability for selecting hints with up/down arrows on keyboard
                  */
                 keyboardControl: true,
                 
-                /**
+              /**
                  * prevent submitting form, when one hint is selected
                  * - just set hint text as INPUT value
                  */
                 preventFormSubmit: false,
                 
-                /**
+              /**
                  * Hide hints, when INPUT lost focus (blur)
                  * var boolean
                  */
                 hideHintsOnBlur: true,
                 
-                /**
+              /**
                  * Reload hints, when INPUT got focus
                  */
                 reloadOnFocus: false,
                 
-                /**
+              /**
                  * Display spinner, while hints are loading
                  * var boolean
                  */
                 displaySpinner: true,
                 
-                /**
+              /**
                  * Message displayed, when the search didn't return any results
                  * Display nothing if FALSE
                  * var boolean|string
                  */
                 notFoundMessage: false,
                 
-                /**
+              /**
                  * Timeout before the hint is shown, ms
                  * var integer
                  */
                 hintTimeout: 500,
                 
-                /**
+              /**
                  * Timeout before the hint is hidden, ms
                  * var integer
                  */
                 hideTimeout: 2000,
                 
-                /**
+              /**
                  * Timeout before the hint is hidden after scrolling or hovering results container, ms
                  * var integer
                  */
                 hideAfterScrollTimeout: 4000,
                 
-                /**
+              /**
                  * Minimal string length for hints
                  * var integer
                  */
                 minStringLength: 2,
                 
-                /**
+              /**
                  * A string or number (ms) determining how long the animation will run.
                  * var integer|string
                  */
                 fadeInDuration: 200,
                 
-                /**
+              /**
                  * A string or number (ms) determining how long the animation will run.
                  * var integer|string
                  */
                 fadeOutDuration: 400,
                 
-                /**
+              /**
                  * function to preprocess request before sending it to server
                  * for example:
                  * function(value) {return value.replace(/"/m, '&#34;');}
@@ -164,7 +164,7 @@
                  */
                 preProcessRequest: false,
                 
-                /**
+              /**
                  * function to preprocess selected hint
                  * for example:
                  * function(index,value) {GLOBAL_selected_index = index; return value;}
@@ -173,53 +173,53 @@
                 preProcessSelected: false
         };
         
-        /**
+       /**
          * Link to kSearchHint itself ( like "this" operator)
          * available anywhere in the jQuery wrapper
          * returned by kSearchHint
          */
         var instance = {};
         
-        /**
+       /**
          * Options after megring defaults and user options
          * var object
          */
         var options;
 
-        /**
+       /**
          * jQuery.element of processing INPUT
          * var object
          */
         instance.hintInput;
         
-        /**
+       /**
          * jQuery.element of hints container
          * wrapper's only child
          * var object
          */
         instance.hintContainer;
         
-        /**
+       /**
          * jQuery.element of hints wrapper
          * container will be positioned relatively to it
          * var object
          */
         instance.hintWrapper;
         
-        /**
+       /**
          * Blur timer, sets FALSE if INPTUT is in focus again
          * var boolean|timer
          */
         instance.blurTimer = false;
         
-        /**
+       /**
          * Display timer
          * var boolean|timer
          */
         instance.displayTimer = false;
 
         
-        /**
+       /**
          * Merging of defaults and user options
          * @param object user_options
          */
@@ -233,7 +233,7 @@
             }
         };
         
-        /**
+       /**
          * Initialization of the main elements
          */
         instance.init = function () {
@@ -257,7 +257,7 @@
             }
         };
         
-        /**
+       /**
          * Initialization of typing events
          */
         instance.initTyping = function()
@@ -284,7 +284,7 @@
             });
         };
         
-        /**
+       /**
          * Gets hints 
          * @param string value - processed text
          * @param function onSuccess - function called when jQuery.ajax success event is fired
@@ -322,7 +322,7 @@
             };
         };
         
-        /**
+       /**
          * Displays block with hints
          * @param array data - simple not indexed array with hint texts
          */
@@ -347,7 +347,7 @@
             }
         };
         
-        /**
+       /**
          * Adds one hint item 
          * @param string - hint text
          */
@@ -379,7 +379,7 @@
             });
         };
         
-        /**
+       /**
          * Initialization of blur and focus events
          */
         instance.initBlurEvents = function()
@@ -413,7 +413,7 @@
             };
         };
         
-        /**
+       /**
          * Hides hints with delay
          * calling this method second time will reset timer to {delay}
          * @param integer delay - in milliseconds
@@ -429,7 +429,7 @@
             },delay);
         };
         
-        /**
+       /**
          * Shows hints
          */
         instance.fadeInHints = function()
@@ -453,7 +453,7 @@
             });
         };
         
-        /**
+       /**
          * Initialization of keyboard controls
          * arrows and enter
          */
@@ -492,7 +492,7 @@
             });
         };
         
-        /**
+       /**
          * Selects the next hint if one is selected
          * Selects first hint if no hint is selected
          * keyboard down arrow
@@ -507,7 +507,7 @@
             nextHint.addClass(options.hintItemHoverClass);
         };
         
-        /**
+       /**
          * Selects the previous hint if one is selected
          * Selects the last hint if no hint is selected
          * keyboard up arrow
@@ -526,7 +526,7 @@
             }
         };
         
-        /**
+       /**
          * Sets selected hint text to INPUT value
          * - for keyboard manipulation
          */
@@ -544,7 +544,7 @@
             }
         };
         
-        /**
+       /**
          * Constructor
          */
         {

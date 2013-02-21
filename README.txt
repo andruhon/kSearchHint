@@ -1,1 +1,0 @@
-jQuery search suggestions
